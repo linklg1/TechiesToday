@@ -61,17 +61,17 @@ router.get('/:id', (req, res) => {
 
 
 router.post("/signup", (req, res) => {
-  User.findOne({
-    where: {
-      username: req.body.username
-    }
-  }).then(dbUserData => {
-    console.log('User is already present with username', dbUserData);
-    if (!dbUserData) {
-      res.status(409).json({ message: 'User already exists in system' });
-      return res;
-    }
-})
+//   User.findOne({
+//     where: {
+//       username: req.body.username
+//     }
+//   }).then(dbUserData => {
+//     console.log('User is already present with username', dbUserData);
+//     if (!dbUserData) {
+//       res.status(409).json({ message: 'User already exists in system' });
+//       return res;
+//     }
+// })
 
   User.create({
     username: req.body.username,
