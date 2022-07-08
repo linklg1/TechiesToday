@@ -5,7 +5,7 @@ const signupFormHandler = async function(event) {
   const password = document.querySelector("#password-signup");
   const email = document.querySelector("#email-signup")
 
-  fetch("/api/user", {
+  const response = await fetch("/api/user", {
     method: "POST",
     body: JSON.stringify({
       username: username.value,
@@ -14,10 +14,9 @@ const signupFormHandler = async function(event) {
     }),
     headers: { "Content-Type": "application/json" }
   })
-    .then(function() {
-      document.location.replace("/dashboard");
-    })
-    .catch(err => console.log(err));
+if (response.ok){
+      document.location.replace("/dashboard");}
+   else {console.log("sign up failed")}
 };
 
 document
