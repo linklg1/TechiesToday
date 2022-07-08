@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
-//router.post("/", withAuth, (req, res) => {
+router.post("/", withAuth, (req, res) => {
   router.post('/', (req, res)=>{
 
     const postId=parseInt(req.body.postId);
@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
   Comment.create({
     post_id: postId,
     comment_text: req.body.comment_text,
-    user_id: 1}) //req.session.userId })
+    user_id: 1}); req.session.userId })
   
     .then(newComment => {
       console.log('trying this too!')
