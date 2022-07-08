@@ -1,4 +1,6 @@
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
+
 const { User, Comment, Post } = require("../../models");
 
 // get all users
@@ -59,5 +61,4 @@ router.get('/:id', (req, res) => {
 });
 
 
-
-
+module.exports = router;
