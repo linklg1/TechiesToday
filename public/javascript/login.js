@@ -4,14 +4,13 @@ console.log('we are logging in');
 async function loginFormHandler(event) {
   event.preventDefault();
 
-const username=document.querySelector("#email-login").value;
-const email = document.querySelector("#email-login").value;
+const username = document.querySelector("#email-login").value;
 const password = document.querySelector("#password-login").value;
 
-console.log('email'+ email);
+console.log('username'+ username);
 console.log('pwd'+ password);
 
-let handleError=function(err){
+let handleError = function(err){
   console.warn(err);
   return new Response(JSON.stringify({
     code:400, 
@@ -22,7 +21,7 @@ let handleError=function(err){
 
 if (username && password) {
   const response = await fetch('/api/user/login', {
-    method: "post",
+    method: "POST",
     body: JSON.stringify({
       username: username,
       password: password

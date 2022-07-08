@@ -20,12 +20,7 @@ console.log('button clicked')
         'Content-Type': 'application/json'
       }
     });
-    // if (commentFetch.ok){
-    // const commentResult=await commentFetch.json()
-
-    // console.log('maybe its working');
-    // console.log({commentResult});
-    // }
+    
     document.location.reload();
   }
 };
