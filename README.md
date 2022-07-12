@@ -14,3 +14,8 @@ A CMS-style blog site titled Techies Today, where developers can publish their b
 ## Link to Deployed Application
 
 https://stark-refuge-69347.herokuapp.com/
+
+
+## Repo
+
+https://github.com/linklg1/TechiesToday.git
