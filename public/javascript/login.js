@@ -31,6 +31,7 @@ if (username && password) {
   }).catch(handleError);
 
   if (response.ok) {
+    console.log(response);
     document.location.replace('/dashboard');
   } else {
     alert(response.statusText);

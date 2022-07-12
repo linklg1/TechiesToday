@@ -33,7 +33,7 @@ router.post("/", withAuth, (req, res) => {
     //   res.status(500).json(err);
     //   console.log('error is: ', err);
     // });
-  Comment.create({...req.body,user_id:req.session.userId, post_id: Math.floor(Math.random()*2)})
+  Comment.create({...req.body,user_id:req.session.userId, post_id: Math.ceil(Math.random()*3)})
   .then(newComment => {
     console.log('trying this too!')
     res.json(newComment);
