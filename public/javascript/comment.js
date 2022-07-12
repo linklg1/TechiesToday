@@ -9,7 +9,7 @@ console.log('button clicked')
   if (comment_text) {
     console.log('this is working now!!!');
 
-    const commentFetch=await fetch('/api/comment', {
+    fetch('/api/comment', {
 
       method: 'POST',
       body: JSON.stringify({

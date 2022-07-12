@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Comment} = require("../../models/");
+const {Comment} = require("../../models/");
 const withAuth = require("../../utils/auth");
 
 
@@ -14,25 +14,34 @@ router.get('/', (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-  router.post('/', (req, res)=>{
+  // router.post('/', (req, res)=>{
 
-    const postId=parseInt(req.body.postId);
+  //   const postId=parseInt(req.body.postId);
 
-    console.log('adding comments: ', req.body);
-    console.log(req.session);
-  Comment.create({
-    post_id: postId,
-    comment_text: req.body.comment_text,
-    user_id: 1}); req.session.userId })
+  //   console.log('adding comments: ', req.body);
+  //   console.log(req.session);
+  // Comment.create({
+  //   post_id: postId,
+  //   comment_text: req.body.comment_text,
+  //   user_id: 1}); req.session.userId })
   
-    .then(newComment => {
-      console.log('trying this too!')
-      res.json(newComment);
-    })
-    .catch(err => {
-      res.status(500).json(err);
-      console.log('error is: ', err);
-    });
+    // .then(newComment => {
+    //   console.log('trying this too!')
+    //   res.json(newComment);
+    // })
+    // .catch(err => {
+    //   res.status(500).json(err);
+    //   console.log('error is: ', err);
+    // });
+  Comment.create({...req.body,user_id:req.session.userId, post_id: Math.floor(Math.random()*2)})
+  .then(newComment => {
+    console.log('trying this too!')
+    res.json(newComment);
+  })
+  .catch(err => {
+    res.status(500).json(err);
+    console.log('error is: ', err);
+  });
 });
 
 router.delete('/:id', withAuth, (req, res) => {
