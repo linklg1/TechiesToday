@@ -13,6 +13,8 @@ A CMS-style blog site titled Techies Today, where developers can publish their b
 
 ## Link to Deployed Application
 
+Heroku is no longer open source and I haven't found another host yet so for the time being this site is disabled. Thanks for understanding.
+
 https://stark-refuge-69347.herokuapp.com/
 
 
